@@ -1,0 +1,123 @@
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+    display: none !important;
+}
+
+input,
+button,
+submit {
+    border: none;
+    padding: 0px;
+}
+
+.puntero {
+    cursor: pointer
+}
+
+.OcultarTexto {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 10em;
+    white-space: nowrap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab 300';
+    src: url(../fonts/Roboto%20Slab%20300.ttf)
+}
+
+@font-face {
+    font-family: 'Pacifico_regular';
+    src: url(../fonts/Pacifico-regular.ttf);
+}
+
+@font-face {
+    font-family: 'Josefin';
+    src: url(../fonts/Josefin%20Sans%20100.ttf);
+}
+
+.Roboto {
+    font-family: 'Roboto Slab 300';
+}
+
+.Pacifico {
+    font-family: 'Pacifico_regular', cursive;
+    color: #B53133;
+}
+
+.Josefin {
+    font-family: 'Josefin';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.FijarMenu {
+    /* position: fixed;*/
+}
+
+@media only screen and (min-width: 768px) {
+    /* For tablets: */
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+}
+
+@media only screen and (min-width: 1024px) {
+    /* For desktop: */
+    table.md-table td.md-cell {
+        font-size: 12px;
+    }
+    table.md-table th.md-column {
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    table.md-table tbody.md-body>tr.md-row,
+    table.md-table tfoot.md-foot>tr.md-row {
+        height: 40px;
+    }
+    table.md-table tbody tr:hover {
+        background-color: #CFD8DC;
+        transition: background-color .2s;
+    }
+}
+
+.md-toast.error {
+    color: red;
+}
+
+.md-toast.success {
+    color: green;
+}
+
+.md-toast.warning {
+    color: orange;
+}
+
+.md-toast.info {
+    color: blue;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.info {
+    color: blue;
+}
+
+.warning {
+    color: orange;
+}
+
+@media print {
+    ·FijarMenu {
+        display: none;
+        visibility: hidden;
+    }
+}

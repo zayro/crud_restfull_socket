@@ -1,0 +1,8 @@
+# -- MARLON ZAYRO -----------------------------------------
+library/*
+app/testing/*
+desktop/*
+.history
+
+#NODEJS
+node_modules/

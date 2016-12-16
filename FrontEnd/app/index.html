@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <title>APi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../library/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="../library/angular-material/angular-material.css">
+    <link rel="stylesheet" href="../library/angular-material-data-table/dist/md-data-table.css">
+    <!-- endinject -->
+    <link rel="stylesheet " href="../library/material-design-icons/iconfont/material-icons.css ">
+    <link rel="stylesheet " href="style.css ">
+</head>
+
+<body ng-controller="main">
+
+
+    <div class="{{pagina}} " ng-cloak>
+
+        <md-toolbar class="FijarMenu ">
+
+            <div class="md-toolbar-tools ">
+
+                <md-button class="md-icon-button " aria-label="Settings " ng-click="toggleLeft() " ng-hide="isOpenLeft() ">
+                    <i class="material-icons ">menu</i>
+                </md-button>
+
+                <h2 class="md-flex ">
+
+                    <span class="Roboto ">{{autor}}</span></h2>
+
+                <span flex></span>
+
+                <md-button class="md-icon-button " aria-label="More " ng-click="salir(DatosUsuario.identificacion); ">
+                    <a><i class="material-icons ">power_settings_new</i></a>
+                </md-button>
+
+            </div>
+
+        </md-toolbar>
+
+        <md-sidenav class="md-sidenav-left md-whiteframe-z3 " md-component-id="left ">
+
+            <md-toolbar class="md-theme-indigo ">
+                <h1 class="md-toolbar-tools ">MENU PRINCIPAL</h1>
+            </md-toolbar>
+
+            <md-content layout-padding>
+
+                <section ng-repeat="(key, value) in MenuUsuario | groupBy: 'menu' ">
+
+                    <md-subheader class="md-primary"> {{key}} </md-subheader>
+
+                    <md-list layout-padding ng-cloak>
+
+                        <md-list-item ng-repeat="(llave, valor) in value | groupBy: 'submenu1' ">
+                            <md-menu>
+
+                                <md-button ng-hide="llave == 'null' || llave == ''" ng-click="valor[0].submenu2 === null ?  link(valor[0].modulo1) : $mdOpenMenu();   ">
+                                    <md-icon md-menu-align-target>clear</md-icon>
+                                    <span flex></span> {{llave}}
+                                </md-button>
+
+                                <md-menu-content width="4">
+
+                                    <md-menu-item ng-repeat=" item in valor ">
+                                        <md-button ng-hide="item.submenu2=='null' " ng-click="$mdOpenMenu(); closeleft(); link(item.modulo2); " aria-label="menu{{$index}} "> {{item.submenu2}} </md-button>
+
+
+                                        <!-- INVOCAR SUBMENU 3
+                                    <md-menu md-position-mode="target-right target ">
+                                    <md-button ng-click="$mdOpenMenu() ">New</md-button>
+                                    <md-menu-content>
+                                    <md-menu-item><md-button >Document</md-button></md-menu-item>
+                                    <md-menu-item><md-button >Spreadsheet</md-button></md-menu-item>
+                                    <md-menu-item><md-button >Presentation</md-button></md-menu-item>
+                                    <md-menu-item><md-button >Form</md-button></md-menu-item>
+                                    <md-menu-item><md-button >Drawing</md-button></md-menu-item>
+                                    </md-menu-content>
+                                    </md-menu>
+                                    -->
+
+
+                                    </md-menu-item>
+
+                                </md-menu-content>
+                            </md-menu>
+
+                            <md-divider ng-if="!$last "></md-divider>
+                        </md-list-item>
+                    </md-list>
+
+                </section>
+
+            </md-content>
+
+        </md-sidenav>
+
+
+        <md-content>
+
+
+            <ui-view>
+            </ui-view>
+
+
+        </md-content>
+
+    </div>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+    <!-- bower:js -->
+
+    <script src="../library/angular/angular.js"></script>
+
+    <script src="../library/angular-sanitize/angular-sanitize.js"></script>
+
+    <script src="../library/angular-loading-bar/build/loading-bar.js"></script>
+
+    <script src="../library/satellizer/satellizer.js"></script>
+
+    <script src="../library/angular-animate/angular-animate.js"></script>
+
+    <script src="../library/angular-aria/angular-aria.js"></script>
+
+    <script src="../library/angular-messages/angular-messages.js"></script>
+
+    <script src="../library/angular-filter/dist/angular-filter.js"></script>
+
+    <script src="../library/angular-resource/angular-resource.js"></script>
+
+    <script src="../library/ngstorage/ngStorage.js"></script>
+
+    <script src="../library/alertifyjs/dist/js/alertify.js"></script>
+
+    <script src="../library/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <script src="../library/jquery/dist/jquery.js"></script>
+
+    <script src="../library/angular-material/angular-material.js"></script>
+
+    <script src="../library/angular-material-data-table/dist/md-data-table.js"></script>
+
+    <!-- endinject -->
+
+
+
+    <script src="config/app.js"></script>
+    <script src="config/theme.js"></script>
+    <script src="config/services.js"></script>
+    <script src="config/routes.js"></script>
+
+    <script src="config/crud.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

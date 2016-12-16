@@ -1,0 +1,14 @@
+<form class="form-horizontal" role="form">
+    <div layout="column" aria-label="Admin Form" ng-cloak class="md-inline-form">
+
+        <md-content layout-gt-sm="row" layout-padding>
+            <div ng-repeat="(key,val) in data">
+                <md-input-container>
+                    <label>{{key | uppercase  }}</label>
+                    <input type="text" value="{{val}}" disabled>
+                </md-input-container>
+            </div>
+        </md-content>
+
+    </div>
+</form>

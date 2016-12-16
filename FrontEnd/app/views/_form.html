@@ -1,0 +1,21 @@
+<div layout="column" aria-label="Admin Form" ng-cloak class="md-inline-form">
+
+    <md-content layout-gt-sm="row" layout-padding>
+        <div>
+            <md-input-container>
+                <label>Nombre</label>
+                <input ng-model="DataForm.nombre" required>
+            </md-input-container>
+
+            <md-input-container>
+                <label>Identificacion</label>
+                <input type="number" string-to-number ng-model="DataForm.identificacion" required>
+            </md-input-container>
+
+            <md-input-container>
+                <md-button type="submit" class="md-raised md-primary">enviar</md-button>
+            </md-input-container>
+        </div>
+    </md-content>
+
+</div>

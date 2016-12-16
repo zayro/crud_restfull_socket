@@ -1,0 +1,20 @@
+{
+    "name": "zayro/back-end",
+    "description": "este es un paquete backend manejando restull",
+    "require": {
+        "php": ">=5.6"
+    },
+    "authors": [{
+        "name": "Marlon Zayro Arias Vargas",
+        "email": "zayro8905@gmail.com"
+    }],
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "library\\": "library/",
+            "app\\": "app/"
+        }
+    }
+}

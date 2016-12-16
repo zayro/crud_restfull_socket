@@ -1,0 +1,42 @@
+{
+  "name": "zavweb",
+  "version": "2.0.0",
+  "description": "development for front end",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "web: node node_modules/gulp/bin/gulp default",
+    "desktop": "electron .",
+    "dev": "electron . --debug"
+  },
+  "author": "Marlon Zayro Arias Vargas",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "electron": "^1.4.12",
+    "electron-packager": "^8.4.0",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.8",
+    "gulp-connect": "^2.3.1",
+    "gulp-debug": "^2.1.2",
+    "gulp-express": "^0.3.5",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-inject": "^4.0.0",
+    "gulp-open": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-server-livereload": "^1.7.0",
+    "gulp-uglify": "^1.5.2",
+    "gulp-useref": "^3.0.6",
+    "gulp-watch": "^4.3.5",
+    "imagemin-pngquant": "^4.2.2",
+    "ip": "^1.1.3",
+    "main-bower-files": "^2.13.1",
+    "socket.io": "^1.7.2"
+  },
+  "engines": {
+    "node": "4.4.5"
+  }
+}

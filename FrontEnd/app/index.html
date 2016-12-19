@@ -5,11 +5,13 @@
     <title>APi</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- bower:css -->
     <link rel="stylesheet" href="../library/angular-loading-bar/build/loading-bar.css">
     <link rel="stylesheet" href="../library/angular-material/angular-material.css">
     <link rel="stylesheet" href="../library/angular-material-data-table/dist/md-data-table.css">
     <!-- endinject -->
+
     <link rel="stylesheet " href="../library/material-design-icons/iconfont/material-icons.css ">
     <link rel="stylesheet " href="style.css ">
 </head>
@@ -102,8 +104,8 @@
         <md-content>
 
 
-            <ui-view>
-            </ui-view>
+            <ng-view>
+            </ng-view>
 
 
         </md-content>
@@ -135,9 +137,9 @@
 
     <script src="../library/alertifyjs/dist/js/alertify.js"></script>
 
-    <script src="../library/angular-ui-router/release/angular-ui-router.js"></script>
-
     <script src="../library/jquery/dist/jquery.js"></script>
+
+    <script src="../library/angular-route/angular-route.js"></script>
 
     <script src="../library/angular-material/angular-material.js"></script>
 
@@ -145,14 +147,21 @@
 
     <!-- endinject -->
 
-
-
     <script src="config/app.js"></script>
-    <script src="config/theme.js"></script>
-    <script src="config/services.js"></script>
-    <script src="config/routes.js"></script>
 
-    <script src="config/crud.js"></script>
+    <script src="config/app.config.js"></script>
+
+    <script src="config/app.main.controller.js"></script>
+    <script src="config/app.crud.controller.js"></script>
+
+    <script src="config/app.theme.js"></script>
+
+    <script src="config/app.service.js"></script>
+
+    <script src="config/app.route.js"></script>
+
+
+
 
     <script src="script.js"></script>
 

@@ -37,13 +37,51 @@ var debug = require('gulp-debug');
 
 
 
-
+/**
+ * inyeccion elementos en bower
+ */
 gulp.task('bower', function() {
     return gulp.src('./app/index.html')
         .pipe(inject(gulp.src(
             mainBowerFiles(), { read: false }), { name: 'bower', relative: true }))
         .pipe(gulp.dest('./app/'));
 });
+
+
+/**
+ * Documentacion Javascript
+ */
+
+var jsdoc = require("gulp-jsdoc");
+
+gulp.task('jsdoc', function() {
+    gulp.src("./app/config/*.js")
+        .pipe(jsdoc('./documentation-js'))
+});
+
+
+
+/**
+ * Documentacion Javascript
+ */
+
+
+// node node_modules/jsdoc/jsdoc.js   --configure node_modules/angular-jsdoc/common/conf.json   --template node_modules/angular-jsdoc/angular-template   --destination build/docs   --readme README.md  --recurse app/config/
+var shell = require('gulp-shell');
+
+gulp.task('docs', shell.task([
+    'node node_modules/jsdoc/jsdoc.js ' +
+    '-c node_modules/angular-jsdoc/common/conf.json ' + // config file
+    '-t node_modules/angular-jsdoc/angular-template ' + // template file
+    '-d build/docs ' + // output directory
+    './README.md ' + // to include README.md as index contents
+    '-r app/config/app.js' // source code directory
+
+]));
+
+/**
+ * ejecucucion del servidor
+ */
 
 gulp.task('desarrollo', function() {
     connect.server({
@@ -53,6 +91,10 @@ gulp.task('desarrollo', function() {
     });
 });
 
+/**
+ * Actualicacion de servidor en vivo
+ */
+
 gulp.task('localhost', function() {
     connect.server({
         root: 'app/development',
@@ -61,13 +103,7 @@ gulp.task('localhost', function() {
     });
 });
 
-gulp.task('testing', function() {
-    connect.server({
-        root: 'app/testing',
-        port: 2020,
-        livereload: false
-    });
-});
+
 
 gulp.task('html', function() {
     gulp.src('./app/development/*.html')
@@ -119,13 +155,13 @@ gulp.task('MinifyHtmlView', function() {
 });
 
 
-gulp.task('MinifyJsProyect', function() {
-    gulp.src('./app/development/proyect/**/*.js')
+
+gulp.task('MinifyJsAssets', function() {
+    gulp.src('./app/development/assets/**/*.js')
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest('./app/testing/proyect'));
+        .pipe(gulp.dest('./app/testing/assets/'));
 });
-
 
 gulp.task('MinifyJs', function() {
     gulp.src('./app/development/*.js')
@@ -134,23 +170,6 @@ gulp.task('MinifyJs', function() {
             mangle: false
         }))
         .pipe(gulp.dest('./app/testing/'));
-});
-
-
-gulp.task('MinifyJsView', function() {
-    gulp.src('./app/development/view/**/*.js')
-        .pipe(plumber())
-        .pipe(uglify({
-            mangle: false
-        }))
-        .pipe(gulp.dest('./app/testing/view/'));
-});
-
-gulp.task('MinifyJsAssets', function() {
-    gulp.src('./app/development/assets/**/*.js')
-        .pipe(plumber())
-        .pipe(uglify())
-        .pipe(gulp.dest('./app/testing/assets/'));
 });
 
 

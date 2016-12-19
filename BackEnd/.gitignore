@@ -2,7 +2,7 @@
 .history
 vendor/*
 nbproject/*
-documentacion/*
+build/*
 
 
 # -- Symfony2 -----------------------------------------

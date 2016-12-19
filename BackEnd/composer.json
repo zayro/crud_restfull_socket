@@ -2,14 +2,16 @@
     "name": "zayro/back-end",
     "description": "este es un paquete backend manejando restull",
     "require": {
-        "php": ">=5.6"
+        "php": ">=5.6",
+        "fabpot/php-cs-fixer": "^2.0"
     },
     "authors": [{
         "name": "Marlon Zayro Arias Vargas",
         "email": "zayro8905@gmail.com"
     }],
     "require-dev": {
-        "heroku/heroku-buildpack-php": "*"
+        "heroku/heroku-buildpack-php": "*",
+        "phpdocumentor/phpdocumentor": "^2.9"
     },
     "autoload": {
         "psr-4": {
